@@ -20,7 +20,6 @@ import { HomeComponent } from './home/home.component'
 import { MaterialModule } from './material.module'
 // import { NavigationMenuComponent } from './navigation-menu/navigation-menu/navigation-menu.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
-import { PosModule } from './pos/pos.module'
 
 // import { FieldErrorModule } from './user-controls/field-error/field-error.module'
 
@@ -52,7 +51,6 @@ import { PosModule } from './pos/pos.module'
     FieldErrorModule,
     NgxMaskModule.forRoot(options), */
     MaterialModule,
-    PosModule,
   ],
   providers: [
     /*     {

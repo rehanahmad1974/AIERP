@@ -42,6 +42,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./inventory/inventory.module').then((m) => m.InventoryModule),
   },
+  {
+    path: 'pos',
+    loadChildren: () => import('./pos/pos.module').then((m) => m.PosModule),
+  },
   { path: '**', component: PageNotFoundComponent },
 ]
 
