@@ -1,6 +1,11 @@
-<div class="content">
-  <mat-toolbar color="primary" fxLayoutGap="8px">
-    <button mat-icon-button>
+<div class="app-container">
+  <mat-toolbar color="primary" fxLayoutGap="8px" class="app-toolbar"
+    [class.app-is-mobile]="media.isActive('xs')" *ngIf="{
+      status: authService.authStatus$ | async,
+      user: authService.currentUser$ | async
+    } as auth;">
+    <button *ngIf="auth?.status?.isAuthenticated" mat-icon-button
+      (click)="sidenav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <a mat-icon-button routerLink="/home">
@@ -8,8 +13,8 @@
       <span class="mat-h2">AIERP</span>
     </a>
     <span class="flex-spacer"></span>
-    <button mat-mini-fab routerLink="/user/profile" matTooltip="Profile"
-      aria-label="User Profile">
+    <button *ngIf="auth?.status?.isAuthenticated" mat-mini-fab routerLink="/user/profile"
+      matTooltip="Profile" aria-label="User Profile">
       <mat-icon>account_circle</mat-icon>
     </button>
     <button mat-mini-fab routerLink="/user/logout" matTooltip="Logout"
@@ -17,5 +22,13 @@
       <mat-icon>lock_open</mat-icon>
     </button>
   </mat-toolbar>
+  <mat-sidenav-container class="app-sidenav-container">
+    <mat-sidenav #sidenav [mode]="media.isActive('xs') ? 'over' : 'side'"
+      [fixedInViewport]="media.isActive('xs')" _ fixedTopGap="56" [(opened)]="opened">
+      <app-navigation-menu></app-navigation-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
-<router-outlet></router-outlet>

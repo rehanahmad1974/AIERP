@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core'
 import { RouterModule, Routes } from '@angular/router'
 
+import { AuthGuard } from './auth/auth-guard.service'
 // import { AuthGuard } from './auth/auth-guard.service'
 import { HomeComponent } from './home/home.component'
-// import { LoginComponent } from './login/login.component'
+import { LoginComponent } from './login/login.component'
 import { ManagerHomeComponent } from './manager/manager-home/manager-home.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
@@ -12,8 +13,8 @@ const routes: Routes = [
   // ------------------------------------
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  // { path: 'login', component: LoginComponent },
-  // { path: 'login/:redirectUrl', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'login/:redirectUrl', component: LoginComponent },
 
   // Lazy Loading Modules
   // (Note: These modules should not be imported in app.module.ts)
@@ -26,12 +27,12 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./admin/admin.module').then((m) => m.AdminModule),
-    // canLoad: [AuthGuard],
+    canLoad: [AuthGuard],
   },
   {
     path: 'manager',
     loadChildren: () => import('./manager/manager.module').then((m) => m.ManagerModule),
-    // canLoad: [AuthGuard],
+    canLoad: [AuthGuard],
   },
   {
     path: 'user',
