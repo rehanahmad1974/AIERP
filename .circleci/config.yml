@@ -1,0 +1,34 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: circleci/node:lts
+    working_directory: ~/repo
+    steps:
+      # Checks out source code from GitHub
+      - checkout
+      # inform CircleCI to setup a Docker-within-Docker environment so that we
+      # can run containers within our pipeline
+      - setup_remote_docker
+      # initiate docker build command for our custom build process, cache the
+      # resulting Alpine based image and tag it with CIRCLE_BRANCH
+      - run:
+          name: Execute Pipeline (Build Source -> Test -> Build Web Server)
+          command: |
+            docker build -f integration.Dockerfile . -t aierp:$CIRCLE_BRANCH
+            mkdir -p docker-cache
+            docker save aierp:$CIRCLE_BRANCH | gzip > docker-cache/built-image.tar.gz
+      # save the created image in cache so that it can be consumed by next step
+      - save_cache:
+          paths:
+            - docker-cache
+          key: built-image-{{ .BuildNum }}
+      # read created image from cache and publish as build artifact
+      - store_artifacts:
+          path: docker-cache/built-image.tar.gz
+          destination: built-image.tar.gz
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
