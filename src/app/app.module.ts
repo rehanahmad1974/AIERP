@@ -21,8 +21,8 @@ import { MaterialModule } from './material.module'
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component'
 // import { NavigationMenuComponent } from './navigation-menu/navigation-menu/navigation-menu.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
-// import { IConfig, NgxMaskModule } from 'ngx-mask'
 
+// import { IConfig, NgxMaskModule } from 'ngx-mask'
 
 // import { FieldErrorModule } from './user-controls/field-error/field-error.module'
 
