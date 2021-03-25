@@ -6,8 +6,6 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { ReactiveFormsModule } from '@angular/forms'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-// import { IConfig, NgxMaskModule } from 'ngx-mask'
-import { environment } from 'src/environments/environment'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
@@ -23,6 +21,8 @@ import { MaterialModule } from './material.module'
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component'
 // import { NavigationMenuComponent } from './navigation-menu/navigation-menu/navigation-menu.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+// import { IConfig, NgxMaskModule } from 'ngx-mask'
+
 
 // import { FieldErrorModule } from './user-controls/field-error/field-error.module'
 
