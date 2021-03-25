@@ -5,7 +5,6 @@ import { AuthGuard } from './auth/auth-guard.service'
 // import { AuthGuard } from './auth/auth-guard.service'
 import { HomeComponent } from './home/home.component'
 import { LoginComponent } from './login/login.component'
-import { ManagerHomeComponent } from './manager/manager-home/manager-home.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
 
 const routes: Routes = [

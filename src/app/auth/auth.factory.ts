@@ -5,9 +5,9 @@ import { CustomAuthService } from './auth-custom.service'
 import { AuthMode } from './auth.enum'
 import { InMemoryAuthService } from './auth.inmemory.service'
 
-//import { AngularFireAuth } from '@angular/fire/auth'
+// import { AngularFireAuth } from '@angular/fire/auth'
 
-//import { FirebaseAuthService } from './auth.firebase.service'
+// import { FirebaseAuthService } from './auth.firebase.service'
 
 export function authFactory(httpClient: HttpClient) {
   switch (environment.authMode) {
