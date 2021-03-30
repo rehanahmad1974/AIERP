@@ -9,7 +9,8 @@ jobs:
       - checkout
       # inform CircleCI to setup a Docker-within-Docker environment so that we
       # can run containers within our pipeline
-      - setup_remote_docker
+      - setup_remote_docker:
+          version: 20.10.2
       # initiate docker build command for our custom build process, cache the
       # resulting Alpine based image and tag it with CIRCLE_BRANCH
       - run:
