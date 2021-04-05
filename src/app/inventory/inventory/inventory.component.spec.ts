@@ -1,16 +1,19 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing'
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing'
 
+import { commonTestingModules } from '../../common/common.testing'
 import { InventoryComponent } from './inventory.component'
 
 describe('InventoryComponent', () => {
   let component: InventoryComponent
   let fixture: ComponentFixture<InventoryComponent>
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [InventoryComponent],
-    }).compileComponents()
-  })
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [InventoryComponent],
+      }).compileComponents()
+    })
+  )
 
   beforeEach(() => {
     fixture = TestBed.createComponent(InventoryComponent)

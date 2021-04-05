@@ -57,6 +57,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MaterialModule,
   ],
   providers: [
+    // place here services which are used in throughout app
     {
       provide: AuthService,
       useFactory: authFactory,
