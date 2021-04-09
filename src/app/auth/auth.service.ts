@@ -35,7 +35,7 @@ export interface IAuthService {
   getToken(): string
 }
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export abstract class AuthService extends CacheService implements IAuthService {
   private getAndUpdateUserIfAuthenticated = pipe(
     filter((status: IAuthStatus) => status.isAuthenticated),
