@@ -1,4 +1,4 @@
-import { TestBed } from '@angular/core/testing'
+/* import { TestBed } from '@angular/core/testing'
 import { RouterTestingModule } from '@angular/router/testing'
 
 import { AppComponent } from './app.component'
@@ -32,8 +32,8 @@ describe('AppComponent', () => {
     )
   })
 })
+ */
 
-/*
 import { TestBed, waitForAsync } from '@angular/core/testing'
 import { MediaObserver } from '@angular/flex-layout'
 import { MatIconRegistry } from '@angular/material/icon'
@@ -98,4 +98,3 @@ describe('AppComponent', () => {
     })
   )
 })
-*/
