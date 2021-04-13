@@ -66,6 +66,7 @@ describe('AppComponent', () => {
       TestBed.configureTestingModule({
         imports: commonTestingModules,
         providers: [
+          AppComponent,
           { provide: MediaObserver, useClass: MediaObserverFake },
           { provide: MatIconRegistry, useClass: MatIconRegistryFake },
           { provide: DomSanitizer, useClass: DomSanitizerFake },
