@@ -19,14 +19,15 @@ export class AppComponent implements OnInit, OnDestroy {
   title = 'AIERP'
 
   constructor(
-    iconRegistry: MatIconRegistry,
-    sanitizer: DomSanitizer,
+    // register custom icon with MatIcon registry
+    private iconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer,
     public authService: AuthService,
     public media: MediaObserver
   ) {
-    iconRegistry.addSvgIcon(
+    this.iconRegistry.addSvgIcon(
       'investment',
-      sanitizer.bypassSecurityTrustResourceUrl('assets/img/icons/investment.svg')
+      this.sanitizer.bypassSecurityTrustResourceUrl('../assets/img/icons/investment.svg')
     )
   }
 

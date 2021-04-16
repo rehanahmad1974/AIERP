@@ -2,6 +2,7 @@ import { HttpClientTestingModule } from '@angular/common/http/testing'
 import { SecurityContext } from '@angular/core'
 import { MediaChange } from '@angular/flex-layout'
 import { ReactiveFormsModule } from '@angular/forms'
+import { MatIconModule } from '@angular/material/icon'
 import { SafeResourceUrl, SafeValue } from '@angular/platform-browser'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { RouterTestingModule } from '@angular/router/testing'
@@ -77,4 +78,5 @@ export const commonTestingModules: any[] = [
   NoopAnimationsModule,
   HttpClientTestingModule,
   RouterTestingModule,
+  MatIconModule,
 ]
