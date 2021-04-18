@@ -56,6 +56,8 @@ export class MatIconRegistryFake {
     }
     return svg
   }
+
+  // getDefaultFontSetClass()
 }
 
 export class DomSanitizerFake {

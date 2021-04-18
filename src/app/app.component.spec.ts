@@ -38,6 +38,7 @@ describe('AppComponent', () => {
 import { TestBed, waitForAsync } from '@angular/core/testing'
 import { MediaObserver } from '@angular/flex-layout'
 import { MatIconRegistry } from '@angular/material/icon'
+import { FakeMatIconRegistry } from '@angular/material/icon/testing'
 import { DomSanitizer } from '@angular/platform-browser'
 import {
   ObservablePropertyStrategy,
@@ -68,7 +69,7 @@ describe('AppComponent', () => {
         imports: commonTestingModules,
         providers: [
           { provide: MediaObserver, useClass: MediaObserverFake },
-          { provide: MatIconRegistry, useClass: MatIconRegistryFake },
+          { provide: MatIconRegistry, useClass: FakeMatIconRegistry },
           { provide: DomSanitizer, useClass: DomSanitizerFake },
           { provide: AuthService, useValue: authServiceSpy },
         ],
