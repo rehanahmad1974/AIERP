@@ -35,7 +35,7 @@ export class MediaObserverFake {
   }
 }
 
-export class MatIconRegistryFake {
+/* export class MatIconRegistryFake {
   // tslint:disable-next-line: variable-name
   _document = document
   addSvgIcon(iconName: string, url: SafeResourceUrl): this {
@@ -56,9 +56,7 @@ export class MatIconRegistryFake {
     }
     return svg
   }
-
-  // getDefaultFontSetClass()
-}
+} */
 
 export class DomSanitizerFake {
   bypassSecurityTrustResourceUrl(url: string): SafeResourceUrl {

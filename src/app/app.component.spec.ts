@@ -51,7 +51,6 @@ import { AppComponent } from './app.component'
 import { AuthService, defaultAuthStatus } from './auth/auth.service'
 import {
   DomSanitizerFake,
-  MatIconRegistryFake,
   MediaObserverFake,
   commonTestingModules,
 } from './common/common.testing'
