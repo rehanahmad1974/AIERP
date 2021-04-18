@@ -13,9 +13,9 @@ import { AuthService } from '../auth/auth.service'
 import { MaterialModule } from '../material.module'
 import { UiService } from './ui.service'
 
-const FAKE_SVGS = {
+/* const FAKE_SVGS = {
   investment: '<svg><path id="investment" name="investment"></path></svg>',
-}
+} */
 
 export class MediaObserverFake {
   isActive(query: string): boolean {
