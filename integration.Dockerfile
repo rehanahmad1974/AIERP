@@ -20,6 +20,7 @@ ENV BUILDER_SRC_DIR=/usr/src
 ENV TESTER_SRC_DIR=/usr/src
 
 WORKDIR $TESTER_SRC_DIR
+# copy production build from the builder stage
 COPY --from=builder $BUILDER_SRC_DIR .
 
 # force update the webdriver, so it runs with latest version of Chrome

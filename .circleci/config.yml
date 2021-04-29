@@ -21,9 +21,9 @@ jobs:
             docker save aierp:$CIRCLE_BRANCH | gzip > docker-cache/built-image.tar.gz
       # save the created image in cache so that it can be consumed by next step
       - save_cache:
+          key: built-image-{{ .BuildNum }}
           paths:
             - docker-cache
-          key: built-image-{{ .BuildNum }}
       # read created image from cache and publish as build artifact
       - store_artifacts:
           path: docker-cache/built-image.tar.gz
