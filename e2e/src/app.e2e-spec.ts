@@ -2,7 +2,7 @@ import { browser, logging } from 'protractor'
 
 import { AppPage } from './app.po'
 
-describe('workspace-project App', () => {
+describe('AIERP App', () => {
   let page: AppPage
 
   beforeEach(() => {
@@ -11,7 +11,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', async () => {
     await page.navigateTo()
-    expect(await page.getTitleText()).toEqual('AIERP app is running!')
+    expect(await page.getTitleText()).toEqual('AIERP')
   })
 
   afterEach(async () => {
