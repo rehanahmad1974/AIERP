@@ -11,7 +11,7 @@ describe('AIERP App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo()
-    expect(page.getTitleText()).toEqual('AIERP')
+    expect<any>(page.getTitleText()).toEqual('AIERP')
   })
 
   afterEach(async () => {
