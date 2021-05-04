@@ -7,7 +7,7 @@ import { AuthMode } from 'src/app/auth/auth.enum'
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000',
-  authMode: AuthMode.InMemory,
+  authMode: AuthMode.CustomServer,
 }
 
 /*
