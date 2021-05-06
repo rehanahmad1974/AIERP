@@ -2,7 +2,7 @@
 // InMemoryAuthService, FirebaseAuthService and CustomAuthService
 // are implementation classes
 import { Injectable } from '@angular/core'
-import decode from 'jwt-decode'
+import jwt_decode from 'jwt-decode'
 import { BehaviorSubject, Observable, pipe, throwError } from 'rxjs'
 import { catchError, filter, map, mergeMap, tap } from 'rxjs/operators'
 
@@ -116,7 +116,7 @@ export abstract class AuthService extends CacheService implements IAuthService {
     const jwt = this.getToken()
 
     if (jwt) {
-      const payload = decode(jwt) as any
+      const payload = jwt_decode(jwt) as any
       return Date.now() >= payload.exp * 1000
     }
 
@@ -124,6 +124,6 @@ export abstract class AuthService extends CacheService implements IAuthService {
   }
 
   protected getAuthStatusFromToken(): IAuthStatus {
-    return this.transformJwtToken(decode(this.getToken()))
+    return this.transformJwtToken(jwt_decode(this.getToken()))
   }
 }
